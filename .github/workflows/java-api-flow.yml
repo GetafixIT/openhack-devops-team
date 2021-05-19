@@ -1,0 +1,9 @@
+jobs
+  quality-java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build with Maven
+      - name: Quality
+        run: |
+          mvn test
