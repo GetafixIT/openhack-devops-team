@@ -22,5 +22,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          PROJECT: OpenHack
-          COLUMN: To do
+          project: https://github.com/GetafixIT/openhack-devops-team/projects/1
+          column_name: To do
