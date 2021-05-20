@@ -6,9 +6,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     paths:
-      - 'apis/poi/*.cs'
-
-#on: push
+      - 'apis/poi/**/*.cs'
 
 jobs:
   quality-cs:
