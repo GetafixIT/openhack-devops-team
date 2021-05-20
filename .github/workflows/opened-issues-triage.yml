@@ -1,5 +1,7 @@
 name: Move new issues into To do
 on:
+  pull_request:
+    branches: [ master ]
   issues:
     types: [opened]
 
