@@ -36,3 +36,19 @@ jobs:
               title: "${{ env.build_name }} Workflow ${{ github.run_number }} Failed! ",
               body: body
             });        
+
+
+on:
+  issues:
+    types: [opened]
+name: Issue opened
+jobs:
+  assign:
+    name: Assign issues to project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issues to project
+        uses: technote-space/create-project-card-action@v1
+        with:
+          PROJECT: OpenHack
+          COLUMN: To do
