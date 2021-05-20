@@ -5,9 +5,12 @@ name: PR USERPROFILE
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
+    branches:
+      - fb_alex_force-fail
     paths:
-      - 'apis/userprofile/**'
-      - '!apis/poi/**'
+      - 'apis/userprofile/**/*.js'
+  pull_request:
+    branches: [ master ]
 
 jobs:          
   quality-node:
