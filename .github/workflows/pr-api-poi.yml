@@ -5,7 +5,7 @@ name: PR POI
 on:
   push:
     branches:
-      - master
+      - '*'
     paths:
       - 'apis/poi/**'
       - '!apis/userprofile/**'
