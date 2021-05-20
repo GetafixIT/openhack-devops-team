@@ -9,6 +9,9 @@ on:
       - fb_alex_force-fail
     paths:
       - 'apis/poi/**/*.cs'
+  pull_request:
+    branches: [ master ]
+
 
 jobs:
   quality-cs:
