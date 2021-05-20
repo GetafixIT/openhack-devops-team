@@ -1,6 +1,6 @@
 ---
-title: Someone just pushed
+title: Workflow error
 assignees: GetafixIT, arianpopalyar, aravind1686, sureshkolipakulakv
-labels: bug, enhancement
+labels: bug, pipes
 ---
-Someone just pushed, oh no! Here's who did it: {{ payload.sender.login }}.
+Someone just pushed a failure, oh no! Here's who did it: {{ payload.sender.login }}.

@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs:          
+jobs:
   quality-node:
     runs-on: ubuntu-latest
     steps:
@@ -21,6 +21,8 @@ jobs:
         if: failure()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: alex-page/github-project-automation-plus@v0.7.1
         with:
-          project: https://github.com/GetafixIT/openhack-devops-team/projects/1
-          column_name: To do
+          project: OpenHack
+          column: To do
+          repo-token: ${{ secrets.GITHUB_TOKEN }}'
