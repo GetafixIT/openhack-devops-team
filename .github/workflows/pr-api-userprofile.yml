@@ -6,8 +6,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     paths:
-      - 'apis/userprofile/**'
-      - '!apis/poi/**'
+      - 'apis/userprofile/**.js'
 
 jobs:          
   quality-node:
