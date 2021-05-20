@@ -4,6 +4,7 @@ name: PR POI
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
+
   pull_request:
     branches: [ master ]
 
@@ -34,19 +35,4 @@ jobs:
               title: "${{ env.build_name }} Workflow ${{ github.run_number }} Failed! ",
               body: body
             });        
-
-
-on:
-  issues:
-    types: [opened]
-name: Issue opened
-jobs:
-  assign:
-    name: Assign issues to project
-    runs-on: ubuntu-latest
-    steps:
-      - name: Assign issues to project
-        uses: technote-space/create-project-card-action@v1
-        with:
-          PROJECT: OpenHack
-          COLUMN: To do
+            
