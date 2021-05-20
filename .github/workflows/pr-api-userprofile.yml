@@ -4,11 +4,6 @@ name: PR USERPROFILE
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches:
-      - fb_alex_force-fail
-    paths:
-      - 'apis/userprofile/**/*.js'
   pull_request:
     branches: [ master ]
 
@@ -21,4 +16,7 @@ jobs:
         run: |
           cd apis/userprofile
           npm i
-          npm run test   
+          npm run test
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
