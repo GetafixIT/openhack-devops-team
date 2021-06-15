@@ -4,12 +4,10 @@ name: PR USERPROFILE
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    paths:
-      - 'apis/userprofile/**'
-      - '!apis/poi/**'
+  pull_request:
+    branches: [ master ]
 
-jobs:          
+jobs:
   quality-node:
     runs-on: ubuntu-latest
     steps:
@@ -18,4 +16,8 @@ jobs:
         run: |
           cd apis/userprofile
           npm i
-          npm run test   
+          npm run test
+      - uses: JasonEtco/create-an-issue@v2
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
