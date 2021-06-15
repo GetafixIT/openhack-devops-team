@@ -4,10 +4,9 @@ name: PR POI
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-     paths:
-      - 'apis/poi/**'
-      - '!apis/userprofile/**'
+
+  pull_request:
+    branches: [ master ]
 
 #on: push
 
@@ -36,3 +35,4 @@ jobs:
               title: "${{ env.build_name }} Workflow ${{ github.run_number }} Failed! ",
               body: body
             });        
+            
